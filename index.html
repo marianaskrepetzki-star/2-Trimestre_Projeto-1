@@ -1,0 +1,126 @@
+Central de Curiosidades Aleatórias
+
+Irei compartilhar informações aleatórias
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você Sabia? - Curiosidades Aleatórias</title>
+    <style>
+        /* Estilização do site (Visual) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #00f2fe;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .curiosidade-box {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        #curiosidade-texto {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+            transition: opacity 0.3s ease;
+        }
+
+        button {
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+            color: #1e1b4b;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>💡 Você Sabia?</h1>
+       
+        <div class="curiosidade-box">
+            <p id="curiosidade-texto">Clique no botão abaixo para descobrir algo incrível!</p>
+        </div>
+
+        <button onclick="novaCuriosidade()">Me Surpreenda!</button>
+       
+        <footer>Criado por [Seu Nome]</footer>
+    </div>
+
+    <script>
+        // Lista de curiosidades do site
+        const listaDeCuriosidades = [
+            "O som que o T-Rex faz no filme Jurassic Park foi criado misturando sons de um filhote de elefante, um jacaré e um tigre.",
+            "O primeiro jogo do Mario não tinha o Mario como protagonista, e sim o Donkey Kong. O Mario era só um carpinteiro chamado 'Jumpman'.",
+            "O primeiro vídeo postado no YouTube tem apenas 19 segundos e mostra um dos fundadores do site no zoológico falando sobre elefantes.",
+            "O ator que interpretou o mestre Yoda em Star Wars original também era a voz do monstro Cookie Monster (Comedor de Biscoitos) da Vila Sésamo.",
+            "O filme Divertida Mente originalmente teria um personagem chamado 'Razão', mas ele foi cortado para não complicar a história.",
+            "A palavra 'Astronauta' vem do grego e significa 'Navegador das Estrelas'.",
+            "O jogo Minecraft foi criado originalmente por apenas uma pessoa em um único fim de semana."
+        ];
+
+        // Função que escolhe uma curiosidade aleatória
+        function novaCuriosidade() {
+            const textoElemento = document.getElementById("curiosidade-texto");
+           
+            // Sorteia um número baseado no tamanho da lista
+            const indiceAleatorio = Math.floor(Math.random() * listaDeCuriosidades.length);
+           
+            // Muda o texto da tela para a curiosidade sorteada
+            textoElemento.textContent = listaDeCuriosidades[indiceAleatorio];
+        }
+    </script>
+</body>
+</html>
